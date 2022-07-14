@@ -3,13 +3,16 @@ import './App.css';
 
 function App() {
   axios({
-    url: 'http://api.positionstack.com/v1/forward',
+
+    url:'https://api.geoapify.com/v1/geocode/search?REQUEST_PARAMS',
+ 
     params: {
-      access_key: '57c7fafe4d4cd9ab9aaf1450c00060fa',
-      query: 'Toronto',
+      apiKey: '54126e5ad21e4bcd8fe3defb8fbbb57f',
+      city: 'Toronto',
     }
   }).then((res)=>{
-    console.log(res.data);
+    console.log(res.data.features[0].properties.lon);
+    console.log(res.data.features[0].properties.lat);
   })
   return (
    
